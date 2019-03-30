@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% include "login.html" %}
+
+<form action="/register_details/" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+
+<table align="center">
+
+    <tr><td><input type="text" placeholder="Name of the Citizen" name="name" required></td></tr>
+    <tr><td><input type="number" placeholder="Contact" name="contact" required></td></tr>
+    <tr><td><input type="email" placeholder="Email" name="email" required></td></tr>
+
+    <tr><td><input type="text" placeholder="Username"  name="username" required></td></tr>
+    <tr><td><input type="password" placeholder="Password"  name="password" required></td></tr>
+    <tr><th><input type="submit" value="Submit"></th></tr>
+</table>
+    </form>
+<h4 align="center">{{ message }}</h4>
+</body>
+</html>
